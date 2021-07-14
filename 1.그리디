@@ -1,0 +1,27 @@
+#1. 그리디 알고리즘.
+=> 1이 될 때까지. 
+
+
+n,k = map(int, input().split())
+
+result = 0
+
+while True:
+  #n이 k로 나누어 떨어지는 수가 될 때까지 빼기
+
+  target= (n // k) * k  #k로 나누어 떨어지는 수
+
+  result += (n-target)  #-1 연산 횟수
+
+  n = target
+
+  # 더이상 나눌 수 없을 때 반복문 탈출
+  if n < k :
+    break
+
+  result += 1
+  n //= k
+
+
+  result += (n -1)
+  print(result)
